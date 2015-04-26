@@ -20,6 +20,6 @@ locale_present_{{ locale|replace('.', '_')|replace(' ', '_') }}:
 
 locale_default:
   locale.system:
-    - name: {{ default }}
+    - name: {{ default.name }}
     - require:
-      - locale: locale_present_{{ default|replace('.', '_')|replace(' ', '_') }}
+      - locale: locale_present_{{ default.requires|replace('.', '_')|replace(' ', '_') }}
